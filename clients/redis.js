@@ -3,16 +3,16 @@ const redis = require("redis");
 
 let redis_client;
 
-if (config.get("env") === 'production') {
+if (process.env.NODE_ENV === 'production') {
     redis_client = redis.createClient({
-        port: config.get("redis.port"),
-        host: config.get("redis.host"),
-        password: config.get("redis.password")
+        port: process.env.REDIS_PORT,
+        host: process.env.REDIS_HOST,
+        password: process.env.REDIS_PASSWORD
     })
 } else {
     redis_client = redis.createClient({
-        port: config.get("redis.port"),
-        host: config.get("redis.host"),
+        port: process.env.REDIS_PORT,
+        host: process.env.REDIS_HOST,
     })
 }
 

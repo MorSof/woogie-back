@@ -22,7 +22,7 @@ class Ebay extends EcommerceCompany{
             {
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded',
-                    'Authorization': config.get('retails.ebay.authorization'),
+                    'Authorization': process.env.EBAY_AUTH,
                     ...data.getHeaders()
                 },
             });
@@ -48,7 +48,7 @@ class Ebay extends EcommerceCompany{
                 headers:  {
                     'Content-Type': 'application/json',
                     'Accept-Encoding': 'application/gzip',
-                    'X-EBAY-C-ENDUSERCTX': 'affiliateCampaignId='+config.get('retails.ebay.affiliateCampaignId')+',contextualLocation=country%3DUS%2Czip%3D19406',
+                    'X-EBAY-C-ENDUSERCTX': 'affiliateCampaignId='+process.env.EBAY_AFF_ID+',contextualLocation=country%3DUS%2Czip%3D19406',
                     'Authorization': 'Bearer ' + access_token,
                     'Cookie': 'ebay=%5Esbf%3D%23%5E; dp1=bu1p/QEBfX0BAX19AQA**6342c8eb^'
                 },
@@ -65,7 +65,7 @@ class Ebay extends EcommerceCompany{
             headers: {
                 'Content-Type': 'application/json',
                 'Accept-Encoding': 'application/gzip',
-                'X-EBAY-C-ENDUSERCTX': 'affiliateCampaignId=' + config.get('retails.ebay.affiliateCampaignId') + ',contextualLocation=country%3DUS%2Czip%3D19406',
+                'X-EBAY-C-ENDUSERCTX': 'affiliateCampaignId=' + process.env.EBAY_AFF_ID + ',contextualLocation=country%3DUS%2Czip%3D19406',
                 'Authorization': 'Bearer ' + access_token,
                 'Cookie': 'ebay=%5Esbf%3D%23%5E; dp1=bu1p/QEBfX0BAX19AQA**634bea3f^'
             }

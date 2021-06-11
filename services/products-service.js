@@ -15,7 +15,7 @@ async function searchEngineLogic(q, filter, sort = 'price', userId, page = 0){
     const cachedProducts = await redisModule.getValueByKey(q + filter + sort + page)
 
     if(cachedProducts == null || cachedProducts == 'null'){
-        config.get('retails.names').forEach((retailName) => {retails.push(retailFactory(retailName));});
+        ["ebay", "ali_express", "amazon"].forEach((retailName) => {retails.push(retailFactory(retailName));});
         // active getProductByKeyWord in each instance
         let promises = [];
         retails.forEach(retail => {promises.push(retail.getProductsByKeyword(q, filter, sort, page));});
