@@ -1,0 +1,33 @@
+{
+  "name": "woogie-back",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "NODE_ENV=production node bin/www --production",
+    "test": "jest --watchAll --verbose",
+    "wtest": "npm test -i testToRunSequentially",
+    "unitests": "npm test -i feed & npm test -i product & npm test -i search-logic & npm test -i sort & npm test -i utils"
+  },
+  "dependencies": {
+    "axios": "^0.20.0",
+    "body-parser": "^1.19.0",
+    "config": "^3.3.2",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "form-data": "^3.0.0",
+    "google-auth-library": "^7.0.2",
+    "googleapis": "^67.1.0",
+    "http-errors": "~1.6.3",
+    "mongoose": "^5.10.9",
+    "morgan": "~1.9.1",
+    "pg": "^8.4.0",
+    "pug": "2.0.0-beta11",
+    "redis": "^3.0.2",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "jest": "^26.5.3",
+    "supertest": "^5.0.0"
+  }
+}

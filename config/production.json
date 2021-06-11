@@ -1,0 +1,36 @@
+{
+  "env": "production",
+  "port": 8080,
+  "mongo": {
+    "dbName": "woogie-feed",
+    "host": "${mongo_key}"
+  },
+  "pg": {
+    "user": "postgres",
+    "password": "${postgres_password}",
+    "dbName": "woogie",
+    "host": "35.232.212.223",
+    "port": 5432
+  },
+  "redis": {
+    "port": 11510,
+    "host": "redis-11510.c228.us-central1-1.gce.cloud.redislabs.com",
+    "password": "${redis_password}"
+  },
+  "retails": {
+    "names": [ "ebay", "ali_express", "amazon"],
+    "ebay": {
+      "authorization": "${ebay_auth}",
+      "affiliateCampaignId": 5338737032
+    },
+
+    "amazon": {
+      "authorization": "${amazon_auth}",
+      "affiliateCampaignId": 5338737032
+    }
+
+  },
+
+  "woogieFrontUrl": "http://localhost:4200"
+
+}
